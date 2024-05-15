@@ -1,5 +1,6 @@
 import { from } from "linq-to-typescript"
 import ValidationReportItemDTO from "../dtos/ValidationReportItemDTO";
+import QueryPropertyReportDTO from "../dtos/QueryPropertyReportDTO";
 
 export default class FormattingValidationService {
     public static formatting(validationReportItemDtoList: ValidationReportItemDTO[]): ValidationReportItemDTO[] {
@@ -9,7 +10,17 @@ export default class FormattingValidationService {
         });
 
         return validationReportItemDtoList;
+    }    
+    
+    public static formattingQueryPropertyReportDTO(QueryPropertyReportDTO: QueryPropertyReportDTO[]): QueryPropertyReportDTO[] {
+        
+        QueryPropertyReportDTO.forEach(item => {
+            item.field = this.replaceWord(item.field)
+        });
+
+        return QueryPropertyReportDTO;
     }
+
 
     private formatValueAsString(value: any): String {
         if (typeof value == "object" || !value) {

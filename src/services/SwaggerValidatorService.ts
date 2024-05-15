@@ -134,7 +134,7 @@ export default class SwaggerValidatorService {
     let objSwaggerYml = await SwaggerDereferencerService.dereference(urlApi);
     let objJson = SwaggerPreparationDataService.removeComponente(objSwaggerYml);
 
-    objJson = this.convertNameToIdArrayParameters(objJson);
+    objJson = SwaggerPreparationDataService.convertNameToIdArrayParameters(objJson);
 
     let iValidatorsRules = this.GetValidationRuleStrategy(rules);
     let validationReportItemDTO = this.checkValidationRuleByField(
@@ -155,24 +155,5 @@ export default class SwaggerValidatorService {
     return iValidations;
   }
 
-  public convertNameToIdArrayParameters(obj: any): any {
-    if (obj.paths == undefined) {
-      return obj;
-    }
-    let pathsProperties = Object.getOwnPropertyNames(obj.paths);
-
-    pathsProperties.forEach((x) => {
-      let path = obj.paths[x];
-      let verbs = Object.getOwnPropertyNames(path);
-      verbs.forEach((y) => {
-        let newParameters: any = {};
-        path[y].parameters.forEach((parameter: any) => {
-          newParameters[parameter.name] = parameter;
-        });
-
-        path[y].parameters = newParameters;
-      });
-    });
-    return obj;
-  }
+ 
 }

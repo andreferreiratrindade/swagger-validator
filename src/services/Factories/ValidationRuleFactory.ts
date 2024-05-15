@@ -1,5 +1,6 @@
 import { TypeValidationRuleStrategy } from "../../constants/TypeValidationRuleStrategy";
 import EnumWithoutMaxLengthRule from "../ValidationRuleStrategy/EnumWithoutMaxLengthRule";
+import EnumWithoutMinLengthRule from "../ValidationRuleStrategy/EnumWithoutMinLengthRule";
 import IValidationRuleStrategy from "../ValidationRuleStrategy/IValidationRuleStrategy";
 import StringWithMinLengthRule from "../ValidationRuleStrategy/StringWithMinLengthRule";
 import StringWithMaxLengthRule from "../ValidationRuleStrategy/StringWithMaxLengthRule";
@@ -19,6 +20,7 @@ export default class ValidationRuleFactory{
         let dicValidationRules : { [id : number] : IValidationRuleStrategy; } = {};
 
         this.AddValidationRule(dicValidationRules,new StringWithMaxLengthRule());
+        this.AddValidationRule(dicValidationRules,new EnumWithoutMinLengthRule());
         this.AddValidationRule(dicValidationRules,new EnumWithoutMaxLengthRule());
         this.AddValidationRule(dicValidationRules,new StringWithPatternRule());
         this.AddValidationRule(dicValidationRules,new StringWithPatternValidWithExampleRule());

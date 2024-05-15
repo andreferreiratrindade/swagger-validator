@@ -1,4 +1,4 @@
-POST https://scaling-doodle-wq4r77r999rhpw6-5000.app.github.dev/Validation
+POST localhost:6000/Validation
 content-type: application/json
 
 {

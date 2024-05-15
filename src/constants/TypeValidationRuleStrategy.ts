@@ -9,5 +9,6 @@ export enum TypeValidationRuleStrategy{
    stringWithPatternNotAcceptStringWithTrimPatternRule = 8,
    elementsInRequiredWithoutUsedRule= 9,
    propertyCnpjRule =10,
-   propertyCpfRule = 11
+   propertyCpfRule = 11,
+   enumWithoutMinLengthRule = 12
 }
