@@ -1,0 +1,29 @@
+POST http://localhost:6003/Finder
+content-type: application/json
+
+{
+  "url":[
+    "https://raw.githubusercontent.com/OpenBanking-Brasil/openapi/main/swagger-apis/opendata-unarranged/1.0.0.yml",
+    "https://raw.githubusercontent.com/OpenBanking-Brasil/openapi/main/swagger-apis/channels/2.0.0.yml",
+    "https://raw.githubusercontent.com/OpenBanking-Brasil/openapi/main/swagger-apis/opendata-financings/1.0.0.yml",
+    "https://raw.githubusercontent.com/OpenBanking-Brasil/openapi/main/swagger-apis/opendata-loans/1.0.0.yml",
+    "https://raw.githubusercontent.com/OpenBanking-Brasil/openapi/main/swagger-apis/opendata-invoicefinancings/1.0.0.yml",
+    "https://raw.githubusercontent.com/OpenBanking-Brasil/openapi/main/swagger-apis/opendata-accounts/1.0.0.yml",
+    "https://raw.githubusercontent.com/OpenBanking-Brasil/openapi/main/swagger-apis/opendata-creditcards/1.0.0.yml",
+    "https://raw.githubusercontent.com/OpenBanking-Brasil/openapi/main/swagger-apis/capitalization-bonds/2.0.0-rc.1.yml",
+    "https://openbanking-brasil.github.io/openapi/swagger-apis/investments/1.0.0.yml",
+    "https://openbanking-brasil.github.io/openapi/swagger-apis/exchange/1.0.0.yml",
+    "https://openbanking-brasil.github.io/openapi/swagger-apis/acquiring-services/1.0.0.yml",
+    "https://openbanking-brasil.github.io/openapi/swagger-apis/pension/2.0.0-rc.1.yml",
+    "https://openbanking-brasil.github.io/openapi/swagger-apis/insurances/2.0.0-rc.1.yml"
+    
+    ],
+  "query" : [
+    
+    {
+      "property" : "pattern",
+      "value" :"-1",
+      "isExactlyValue": false
+    }
+    ]
+}

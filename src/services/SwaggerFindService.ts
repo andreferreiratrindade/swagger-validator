@@ -33,15 +33,20 @@ export default class SwaggerFindService {
             RetornoRequest.Response(error, null, res, HttpStatusCode.BAD_REQUEST);
         }
 
-        let tasks: Promise<QueryPropertyApiDTO>[] = [];
+        let tasks: Promise<QueryPropertyReportDTO[]>[] = [];
         req.body.url.forEach((url: string) => {
             tasks.push(this.Exec(url, req.body.query));
         });
 
         let resultSwaggerValidation = await Promise.all(tasks)
 
-        return RetornoRequest.Response(resultSwaggerValidation, null, res, HttpStatusCode.OK);
+        let lstReturn : QueryPropertyReportDTO[]= [];
+        resultSwaggerValidation.forEach(x=> lstReturn.push(...x));
+
+        return RetornoRequest.Response(lstReturn, null, res, HttpStatusCode.OK);
     }
+
+
 
     checkValidationRuleByField(
         obj: any,
@@ -109,7 +114,8 @@ export default class SwaggerFindService {
                     let objResult: QueryPropertyReportDTO = {
                         field: path.join("/") + "/" + field,
                         property: x.property,
-                        value: value[x.property].toString()
+                        value: value[x.property].toString(),
+                        api: ""
                     };
 
                     objResultList.push(objResult);
@@ -121,11 +127,23 @@ export default class SwaggerFindService {
         return objResultList;
     }
 
+    public convertQueryPropertyApiToCsv(lst : QueryPropertyApiDTO[]) : string{
+        
+        let str : string= "api;field;property;value \r\n ";
+        lst.forEach(x=> {
+            x.items.forEach(item=> {
+                str += `${x.api.title};${item.field};${item.property};${item.value} \r\n `
+            })
+
+        });
+
+        return str;
+    }
 
     public async Exec(
         urlApi: string,
         query: QueryPropertyDTO[]
-    ): Promise<QueryPropertyApiDTO> {
+    ): Promise<QueryPropertyReportDTO[]> {
 
         query.forEach(x => {
 
@@ -146,13 +164,11 @@ export default class SwaggerFindService {
             validationReportItemDTO
         );
 
+        validationReportItemDTO.forEach(x=> x.api = objSwaggerYml.info.title);
 
-        let apiDto: QueryPropertyApiDTO = {
-            api: objSwaggerYml.info,
-            items: validationReportItemDTO
-        }
+    
 
-        return apiDto;
+        return validationReportItemDTO;
 
     }
 

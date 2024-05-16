@@ -1,17 +1,23 @@
-field;property;value
-personal-accounts/get/responses/200/data/items/fees/priorityServices;maxItems;40
-personal-accounts/get/responses/200/data/items/fees/priorityServices/items/prices;maxItems;4
-personal-accounts/get/responses/200/data/items/fees/otherServices;maxItems;100
-personal-accounts/get/responses/200/data/items/fees/otherServices/items/prices;maxItems;4
-personal-accounts/get/responses/200/data/items/serviceBundles;maxItems;200
-personal-accounts/get/responses/200/data/items/serviceBundles/items/services;maxItems;100
-personal-accounts/get/responses/200/data/items/serviceBundles/items/prices;maxItems;4
-personal-accounts/get/responses/200/data/items/openingClosingChannels;maxItems;7
-personal-accounts/get/responses/200/data/items/transactionMethods;maxItems;4
-business-accounts/get/responses/200/data/items/fees/services;maxItems;200
-business-accounts/get/responses/200/data/items/fees/services/items/prices;maxItems;4
-business-accounts/get/responses/200/data/items/serviceBundles;maxItems;100
-business-accounts/get/responses/200/data/items/serviceBundles/items/services;maxItems;100
-business-accounts/get/responses/200/data/items/serviceBundles/items/prices;maxItems;4
-business-accounts/get/responses/200/data/items/openingClosingChannels;maxItems;7
-business-accounts/get/responses/200/data/items/transactionMethods;maxItems;4
+field;property;value;api
+bonds/get/responses/200/data/items/society/products/items/quotas/items/capitalizationQuota;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Capitalization-bonds - Open Finance Brasil
+bonds/get/responses/200/data/items/society/products/items/quotas/items/raffleQuota;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Capitalization-bonds - Open Finance Brasil
+bonds/get/responses/200/data/items/society/products/items/quotas/items/chargingQuota;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Capitalization-bonds - Open Finance Brasil
+bonds/get/responses/200/data/items/society/products/items/capitalizationPeriod/interestRate;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Capitalization-bonds - Open Finance Brasil
+bonds/get/responses/200/data/items/society/products/items/capitalizationPeriod/earlyRedemptions/items/rate;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Capitalization-bonds - Open Finance Brasil
+bonds/get/responses/200/data/items/society/products/items/capitalizationPeriod/redemptionPercentageEndTerm;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Capitalization-bonds - Open Finance Brasil
+bonds/get/responses/200/data/items/society/products/items/finalRedemptionRate;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Capitalization-bonds - Open Finance Brasil
+bonds/get/responses/200/data/items/society/products/items/draws/items/minimumContemplationProbability;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Capitalization-bonds - Open Finance Brasil
+risk-coverages/get/responses/200/data/items/society/products/items/pmbacRemuneration/interestRate;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Pension - Open Finance Brasil
+risk-coverages/get/responses/200/data/items/society/products/items/reclaim/table/items/percentage;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Pension - Open Finance Brasil
+survival-coverages/get/responses/200/data/items/society/products/items/defferalPeriod/interestRate;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Pension - Open Finance Brasil
+survival-coverages/get/responses/200/data/items/society/products/items/defferalPeriod/reversalFinancialResults;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Pension - Open Finance Brasil
+survival-coverages/get/responses/200/data/items/society/products/items/defferalPeriod/investmentFunds/items/maximumAdministrationFee;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Pension - Open Finance Brasil
+survival-coverages/get/responses/200/data/items/society/products/items/defferalPeriod/investmentFunds/items/maximumPerformanceFee;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Pension - Open Finance Brasil
+survival-coverages/get/responses/200/data/items/society/products/items/grantPeriodBenefit/interestRate;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Pension - Open Finance Brasil
+survival-coverages/get/responses/200/data/items/society/products/items/grantPeriodBenefit/reversalFinancialResults;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Pension - Open Finance Brasil
+survival-coverages/get/responses/200/data/items/society/products/items/grantPeriodBenefit/investmentFunds/items/maximumAdministrationFee;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Pension - Open Finance Brasil
+survival-coverages/get/responses/200/data/items/society/products/items/grantPeriodBenefit/investmentFunds/items/maximumPerformanceFee;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Pension - Open Finance Brasil
+survival-coverages/get/responses/200/data/items/society/products/items/costs/loadingAntecipated/minValue;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Pension - Open Finance Brasil
+survival-coverages/get/responses/200/data/items/society/products/items/costs/loadingAntecipated/maxValue;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Pension - Open Finance Brasil
+survival-coverages/get/responses/200/data/items/society/products/items/costs/loadingLate/minValue;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Pension - Open Finance Brasil
+survival-coverages/get/responses/200/data/items/society/products/items/costs/loadingLate/maxValue;pattern;^(\d{1}\.\d{6})$|^(-1.000000)$;API Pension - Open Finance Brasil

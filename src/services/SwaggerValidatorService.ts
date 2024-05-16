@@ -148,6 +148,10 @@ export default class SwaggerValidatorService {
     return validationReportItemDTO;
   }
 
+  public AddCsvFormat(){
+    
+  }
+
   public GetValidationRuleStrategy(rules: number[]): IValidationRuleStrategy[] {
     let dictionaries = ValidationRuleFactory.buildDictionary();
     let iValidations = rules.map((x) => dictionaries[x]);
